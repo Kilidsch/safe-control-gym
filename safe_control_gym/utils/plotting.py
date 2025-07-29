@@ -366,7 +366,7 @@ def get_log_dirs(all_logdirs,
         logdirs = [log for log in logdirs if all(x in log for x in select)]
     if exclude is not None:
         logdirs = [
-            log for log in logdirs if all(not (x in log) for x in exclude)
+            log for log in logdirs if all(x not in log for x in exclude)
         ]
     # Verify logdirs.
     print('Plotting from...\n' + '=' * DIV_LINE_WIDTH + '\n')
